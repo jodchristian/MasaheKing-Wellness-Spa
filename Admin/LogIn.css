@@ -1,0 +1,184 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ─── CSS Variables ───────────────────────────────────────────── */
+:root {
+    --forest: #1a3a2a;
+    --forest-mid: #2c5f3f;
+    --forest-light: #3d7a52;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d080;
+    --cream: #f9f5ec;
+    --text-dark: #1c1c1c;
+    --text-light: #f9f5ec;
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.12);
+    --shadow-deep: 0 8px 40px rgba(0,0,0,0.22);
+    --radius-pill: 50px;
+    --radius-card: 12px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 14px 40px;
+    box-shadow: var(--shadow-deep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ─── Logo Area ───────────────────────────────────────────────── */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    transition: transform var(--transition);
+}
+
+    .logo:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Branding section */
+.Name {
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: -1em;
+    font-size: 40px;
+}
+
+#MK {
+    margin-top: -5em;
+    font-size: 70px; /* Large and bold */
+    font-weight: bold;
+    color: black; /* Default gold */
+    transition: color 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    margin-top: 50px;
+}
+
+
+#Wellness {
+    font-size: 40px; /* Large and bold */
+    font-weight: bold;
+    color: black; /* Default gold */
+    transition: color 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+
+    /* Hover effect */
+    #MK:hover,
+    #Wellness:hover {
+        color: gold; /* Turns black on hover */
+    }
+
+.login-container {
+    margin-top: 70px;
+    background-color: #1a3a2a; /* Deep green background */
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    width: 700px;
+    text-align: center;
+    /* Centering */
+    margin: 0 auto; /* Centers horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color white */
+}
+
+    .login-container h2 {
+        margin-bottom: 1em;
+        color: white; /* Heading text white */
+        font-size: 40px;
+        font-family: 'Playfair Display', serif;
+    }
+
+.form-group {
+    font-size: 18px; /* Smaller label text */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1em; /* Space between fields */
+    width: 100%;
+}
+
+    .form-group input {
+        width: 100%;
+        padding: 0.5em 0.8em; /* Comfortable but not too tall */
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        font-size: 16px; /* Input text size */
+        margin-top: 0.4em; /* Space between label and input */
+    }
+
+.btn {
+    display: inline-block;
+    padding: 0.4em 1.2em; /* Smaller padding */
+    border-radius: 20px; /* Slightly rounded */
+    background-color: var(--gold);
+    border: 1px solid var(--gold-light);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em; /* Smaller text */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+    margin-top: 1em;
+}
+
+    .btn:hover {
+        background-color: black; /* Turns black on hover */
+        color: var(--gold); /* Text becomes gold */
+        transform: translateY(-2px); /* Subtle lift */
+    }
+
+.label {
+    display: block;
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+}

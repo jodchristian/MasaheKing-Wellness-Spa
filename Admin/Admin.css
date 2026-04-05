@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ??? CSS Variables ????????????????????????????????????????????? */
+:root {
+    --forest: #1a3a2a;
+    --forest-mid: #2c5f3f;
+    --forest-light: #3d7a52;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d080;
+    --cream: #f9f5ec;
+    --text-dark: #1c1c1c;
+    --text-light: #f9f5ec;  
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.12);
+    --shadow-deep: 0 8px 40px rgba(0,0,0,0.22);
+    --radius-pill: 50px;
+    --radius-card: 12px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ??? Reset & Base ?????????????????????????????????????????????? */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ??? Header ???????????????????????????????????????????????????? */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 14px 40px;
+    box-shadow: var(--shadow-deep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ??? Logo Area ????????????????????????????????????????????????? */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    transition: transform var(--transition);
+}
+
+    .logo:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ?????? NavBar ??????????????????????????????????????????????? */
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gold);
+    padding: 10px 20px;
+    gap: 20px;
+}
+
+.nav-item {
+    padding: 0 3em;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .nav-item a {
+        text-decoration: none; /* removes underline */
+        color: inherit; /* keeps the same text color */
+        display: block; /* makes the whole nav-item clickable */
+    }
+
+    .nav-item:hover {
+        background-color: black;
+        color: gold;
+    }
+
+    .nav-item.active {
+        background-color: var(--forest);
+        color: white;
+    }
+
+.back-button-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.back-button {
+    background-color: var(--forest);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .back-button:hover {
+        background-color: var(--forest-light);
+    }
+
+
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+        margin-bottom: 10px;
+        color: #2c5f3f;
+    }
+
+    .card p {
+        margin: 5px 0;
+        color: #333;
+    }
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(135deg,#1b5e20,#2e7d32);
+    color: white;
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--forest) !important;
+    padding: 10px 26px;
+    border-radius: var(--radius-pill);
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+    margin-left: 32px;
+    box-shadow: 0 3px 14px rgba(184, 134, 11, 0.45);
+    text-decoration: none;
+}
+
+    .logout-btn:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-pale) 100%) !important;
+        color: var(--forest) !important;
+        box-shadow: 0 6px 20px rgba(184, 134, 11, 0.55) !important;
+    }
+
+    .logout-btn::after {
+        display: none !important;
+    }
+
+/* ??? Dashboard Specific ?????????????????????????????????????????????? */
+.calendar {
+    width: 100vh;
+    background-color: var(--cream);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-deep);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header select {
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 8px;
+    border: 2px solid var(--forest);
+    background-color: var(--cream);
+    color: var(--forest);
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+}
+
+.calendar table {
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    overflow: hidden;
+    width: 14.28%;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.calendar a {
+    text-decoration: none;
+    padding: 4em;
+}
+
+
+.calendar th {
+    background-color: var(--forest);
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.calendar td {
+    background-color: #fff;
+    color: var(--text-dark);
+    font-weight: 600;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.calendar td:hover {
+    background-color: var(--gold-light);
+    color: white;
+}
+
+.calendar .today {
+    background-color: var(--forest-light);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* ??? Appointments/List Specific ?????????????????????????????????????????????? */
+
+.appointments-grid {
+    width: 90%;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-deep);
+}
+
+.appointments-grid table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointments-grid th, .appointments-grid td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.appointments-grid th {
+    background-color: var(--forest);
+    color: white;
+}
+
+/* ??? Login Specific ?????????????????????????????????????????????? */
+
+.Name {
+    text-align: center;
+    margin-top: 20px;
+    line-height: .2;
+}
+#MK {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 60px;
+    color: #456B48;
+}
+
+#Wellness {
+    font-family: Arial;
+    font-size: 40px;
+    color: #6C5426;
+    letter-spacing: .5em;
+    padding-left: 20px;
+}
+
+
+.login-container {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    width: 350px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: Arial;
+    color: #3d5a42;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-family: Arial;
+    font-size: 14px;
+    color: #2b3d2b;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: #456B48;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #3b5c3e;
+    color: white;
+}
+
+.label {
+    display: block;
+    margin-top: 15px;
+    color: red;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+
+/*RODJE*/
+
+#main {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+
+    gap: 2em;
+}
+
+#gallery {
+    display: flex;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+    
+    width: 90%;
+    padding: 1em;
+
+    border: 1px solid black;
+}
+
+/* FORM */
+
+/* FORM */
+.form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 2em;
+    gap: 0.8em;
+    border: 2px solid #023d01;
+    border-radius: 1em;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: .7em;
+    justify-content: space-between;
+}
+
+.input span {
+    font-weight: 700;
+    color: black;
+    border-radius: 1em;
+    padding: 0.2em 0.3em;
+}
+
+
+/* GRID */
+
+.grid {
+    display: table;
+    background-color: white;
+    text-align: center;
+}
+
+.grid th {
+    color: white;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+}
+
+
+
+#card {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 1em;
+    gap: 1em;
+
+    border: 1px solid black;
+}
+
+
+
+/* BUTTONS */
+
+/* Base action button styling */
+.btn-action {
+    display: inline-block;
+    padding: 10px 24px;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition);
+}
+
+    .btn-action:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+/* Modify/Edit - Gold Gradient */
+.btn-modify {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--forest);
+}
+
+    .btn-modify:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-pale) 100%);
+    }
+
+/* Delete/Deny/Cancel - Red Gradient */
+.btn-delete, .btn-deny, .btn-cancel {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+}
+
+    .btn-delete:hover, .btn-deny:hover, .btn-cancel:hover {
+        background: linear-gradient(135deg, #e74c3c 0%, #ff7979 100%);
+    }
+
+/* Complete/Approve/Save - Green Gradient */
+.btn-complete, .btn-approve, .btn-save, .btn-confirm {
+    background: linear-gradient(135deg, var(--forest-mid) 0%, var(--forest-light) 100%);
+}
+
+    .btn-complete:hover, .btn-approve:hover, .btn-save:hover, .btn-confirm:hover {
+        background: linear-gradient(135deg, var(--forest-light) 0%, #4caf50 100%);
+    }
+
+/* Modal specific button styling */
+.btn-modal {
+    display: inline-block;
+    padding: 10px 24px;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin: 10px 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition);
+}
+
+.btn-modal.btn-secondary {
+    background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+}
+
+.btn-modal.btn-secondary:hover {
+    background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* DAY SCHEDULE VIEW */
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 1em;
+    gap: 1em;
+
+    border: 1px solid black;
+}
+
+.scheduleCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    border: 1px solid black;
+}

@@ -1,0 +1,53 @@
+<%@ Master Language="C#" AutoEventWireup="True" CodeBehind="AdminMaster.master.cs" Inherits="MasaheKingWellnessSpa.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server"></asp:ContentPlaceHolder></title>
+    <link rel="stylesheet" href="Admin.css" />
+    <style>
+        /* Modal Overlay styling */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-content { background: #fff; padding: 30px; border-radius: 8px; width: 400px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body style="background-image: url('images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; background-attachment: fixed;">
+
+    <!--==== HEADER ====-->
+    <form id="form1" runat="server">
+    <header class="header">   
+        <div class="logo-area">
+            <img src="images/MK.png" alt="MK Spa Logo" class="logo" />
+            <span class="brand-name">MasaheKing Wellness Spa</span>
+        </div>   
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btn-action btn-delete" OnClick="btnLogout_Click" CausesValidation="false" />
+    </header>
+
+    <!-- Logout Confirm Modal -->
+    <asp:Panel ID="pnlLogoutModal" runat="server" CssClass="modal-overlay" Visible="false">
+        <div class="modal-content">
+            <h3 style="margin-bottom: 10px; color: #1a3a2a;">Confirm Logout</h3>
+            <p style="margin-bottom: 20px; color: #333;">Are you sure you want to log out?</p>
+            <div>
+                <asp:Button ID="btnConfirmLogout" runat="server" Text="Yes, Logout" CssClass="btn-action btn-delete" OnClick="btnConfirmLogout_Click" CausesValidation="false" />
+                <asp:Button ID="btnCancelLogout" runat="server" Text="Cancel" CssClass="btn-modal btn-secondary" OnClick="btnCancelLogout_Click" CausesValidation="false" />
+            </div>
+        </div>
+    </asp:Panel>
+
+    <!--==== NAVIGATION ====-->
+    <div class="nav-bar" id="navBar" runat="server">
+        <div class="nav-item"><a href="Calendar.aspx">Calendar</a></div>
+        <div class="nav-item"><a href="Appointments.aspx">Appointments</a></div>
+        <div class="nav-item"><a href="PendingAppointments.aspx">Pending</a></div>
+    </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
