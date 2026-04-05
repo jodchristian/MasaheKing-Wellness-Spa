@@ -1,0 +1,837 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ─── CSS Variables ───────────────────────────────────────────── */
+:root {
+    --forest: #1a3a2a;
+    --forest-mid: #2c5f3f;
+    --forest-light: #3d7a52;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d080;
+    --cream: #f9f5ec;
+    --text-dark: #1c1c1c;
+    --text-light: #f9f5ec;
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.12);
+    --shadow-deep: 0 8px 40px rgba(0,0,0,0.22);
+    --radius-pill: 50px;
+    --radius-card: 12px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.header {
+    height: 127.81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 14px 40px;
+    box-shadow: var(--shadow-deep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ─── Logo Area ───────────────────────────────────────────────── */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    transition: transform var(--transition);
+}
+
+    .logo:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    width: 92px;
+}
+
+/* ─── Menu Area ───────────────────────────────────────────────── */
+.menu-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ─── Primary Navigation ──────────────────────────────────────── */
+.navA a {
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    margin-left: 28px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color var(--transition);
+}
+
+    .navA a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1.5px;
+        background: var(--gold-light);
+        transition: width var(--transition);
+    }
+
+    .navA a:hover {
+        color: var(--gold-pale);
+    }
+
+        .navA a:hover::after {
+            width: 100%;
+        }
+
+/* ─── Book Now Button ─────────────────────────────────────────── */
+.book {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--forest) !important;
+    padding: 10px 26px;
+    border-radius: var(--radius-pill);
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+    margin-left: 32px;
+    box-shadow: 0 3px 14px rgba(184, 134, 11, 0.45);
+    transition: all var(--transition) !important;
+}
+
+    .book::after {
+        display: none !important;
+    }
+
+    .book:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-pale) 100%) !important;
+        color: var(--forest) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(184, 134, 11, 0.55) !important;
+    }
+
+.section-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 400px;
+    margin-block: -2vh;
+    flex-wrap: wrap;
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.right-section {
+    flex: 1;
+    text-align: right;
+    margin-top:-95px;
+}
+
+.sub-heading {
+    font-size: 2rem;
+    color: #333;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: inline-block;
+    color: #c5a048;
+    letter-spacing: 2px;
+}
+
+.body-text {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    display: block;
+    max-width: 500px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    min-width: 380px;
+}
+
+/* ---ABOUT SECTION--- */
+
+.section-2 {
+    background-color: #1a3a2a;
+    --forest: #1a3a2a;
+    --forest-mid: #2c5f3f;
+    --forest-light: #3d7a52;
+    padding: 60px 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.section-2-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.left-second-section {
+    flex: 1 1 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    position: relative;
+    min-width: 300px;
+}
+
+    .left-second-section img {
+        max-width: 100%;
+        width: 150px;
+        height: auto;
+        border-radius: 4px;
+    }
+
+.right-second-section {
+    flex: 1 1 450px;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    position: relative;
+}
+
+.script-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.brand-sub {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.read-more {
+    background: linear-gradient(135deg, #c5a048, #f0d080);
+    color: #1a3a2a;
+    padding: 14px 34px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background: linear-gradient(135deg, #d4a017, #f0d080);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 850px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text-box {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .about-images {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-images {
+        width: 100%;
+        max-width: 450px;
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .about-text-box {
+        width: 100%;
+        order: 2;
+        padding: 20px;
+    }
+
+    .read-more-btn {
+        margin: 0 auto;
+    }
+}
+
+
+/* ---SERVICES SECTION--- */
+
+.service-section-container {
+    background: url('Images/site_texture.jpg') repeat;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.service-header {
+    margin-bottom: 40px;
+}
+
+.service-title {
+    color: #c5a048;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 52px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+    display: inline-block;
+}
+
+.cursive-text {
+    color: #c5a048;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 52px;
+    margin-left: 8px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+}
+
+.service-desc {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 700px;
+    margin: 20px auto 0;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 50px;
+    margin: 50px auto 0 auto;
+    max-width: 1600px;
+    margin-inline: auto;
+    overflow-y: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    padding-top: 10px !important;
+}
+
+    .cards-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .cards-container::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+    }
+
+    .cards-container::-webkit-scrollbar-thumb {
+        background: #c5a048;
+        border-radius: 10px;
+    }
+
+/* Service Card */
+.service-card {
+    background: linear-gradient(135deg, #1a3a2a, #2c5f3f);
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    flex: 0 0 300px;
+    max-width: 350px;
+    text-align: left;
+    min-height: 360px;
+    position: relative;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    scroll-snap-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+    }
+
+    .service-card h3 {
+        font-family: 'Playfair Display', serif;
+        color: var(--gold-pale);
+        font-size: 1.7rem;
+        margin-bottom: 18px;
+        line-height: 1.2;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .service-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+/* Footer */
+.services-footer {
+    margin-top: 60px;
+}
+
+.read-more-gold {
+    background: linear-gradient(135deg, #c5a048, #f0d080);
+    color: #1a3a2a;
+    padding: 14px 34px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+    .read-more-gold:hover {
+        background: linear-gradient(135deg, #d4a017, #f0d080);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+.community-text {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: black;
+}
+
+    .social-btn:hover {
+        background-color: #f0f0f0;
+        border-color: #c5a048;
+        color: #1a3a2a;
+    }
+
+/* ─── Burger Icon ─────────────────────────────────────────────── */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 17px;
+    cursor: pointer;
+    padding: 2px 0;
+    transition: transform var(--transition);
+}
+
+    .burger:hover {
+        transform: scale(1.1);
+    }
+
+    .burger span {
+        display: block;
+        height: 2px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 2px;
+        transition: background-color var(--transition);
+    }
+
+    .burger:hover span {
+        background-color: var(--gold-pale);
+    }
+
+/* ─── Navbar Container ────────────────────────────────────────── */
+#navbar {
+    position: relative;
+}
+
+#dropdownContent {
+    position: fixed;
+    top: calc(95px + 28px + 1px);
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    box-shadow: var(--shadow-deep);
+    padding: 30px 40px;
+    z-index: 1000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: flex-start;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+}
+
+    #dropdownContent.show {
+        display: flex;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #dropdownContent a {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color var(--transition);
+        transition: transform 0.35s ease;
+    }
+
+        #dropdownContent a:hover {
+            color: var(--gold-pale);
+            transform: translateX(4px);
+        }
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.menu-icon {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 0.25s ease;
+}
+
+.menu-item:hover .menu-icon {
+    transform: translateX(4px);
+}
+
+/* ─── Tablet View (481px to 1024px) ─────────────────────────── */
+@media (min-width: 481px) and (max-width: 1024px) {
+    /* Header: More room, so we can increase padding and size */
+    /* Header & Brand */
+    .header {
+        height: 90px;
+        padding: 10px 30px !important;
+        justify-content: space-between !important;
+    }
+
+    .logo {
+        width: 70px !important;
+    }
+
+    .brand-name {
+        font-size: 22px !important;
+        max-width: none; /* Allow name to sit on one line */
+        white-space: nowrap;
+    }
+
+    /* Menu & Booking */
+    .menu-area {
+        gap: 20px !important;
+    }
+
+    .book {
+        padding: 10px 20px !important;
+        font-size: 12px !important;
+    }
+
+    #dropdownContent {
+        width: 35% !important; /* Not as wide as mobile */
+        top: 87px !important; /* Matches header height */
+    }
+
+    /* Section 1 & 2: Return to side-by-side (Row) */
+    .section-1, .section-2-container {
+        flex-direction: row !important; /* Back to horizontal */
+        text-align: left; /* Standard alignment */
+        padding: 40px 30px !important;
+        align-items: center;
+        gap: 30px !important;
+    }
+
+    .main-title {
+        font-size: 3.5rem !important;
+    }
+
+    .body-text {
+        margin: 20px 0 !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Images: Let them take up half the width instead of 100% */
+    .hero-image, .left-second-section, .right-second-section {
+        flex: 1 !important;
+        width: 50% !important;
+    }
+
+    /* Section 2: Layout adjustment */
+    .section-2-container {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    /* Services Section: Show more than one card at a time */
+    .service-card {
+        flex: 0 0 45% !important; /* Shows roughly 2 cards per row */
+        min-height: 350px !important;
+    }
+
+    .cards-container {
+        justify-content: center;
+        flex-wrap: wrap !important; /* Allow cards to wrap to next line if needed */
+        gap: 20px !important;
+    }
+
+    /* Buttons: Side-by-side instead of stacked */
+    .social-buttons {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .social-btn {
+        width: auto !important;
+        padding: 10px 20px !important;
+    }
+
+    /* Navigation: Usually Home is visible on Tablet */
+    .navA {
+        display: inline-block !important;
+    }
+}
+
+/* ─── Mobile View (max-width: 480px) ────────────────────────── */
+@media (max-width: 480px) {
+    .header {
+        height: 80px !important;
+        padding: 10px 15px !important;
+        justify-content: space-between !important;
+        gap: 10px;
+    }
+
+
+    .logo {
+        width: 40px !important;
+    }
+
+    .cards-container {
+        justify-content: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .brand-name {
+        font-size: 14px !important;
+        max-width: 130px;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .menu-area {
+        display: flex !important;
+        flex-shrink: 0 !important;
+        gap: 10px !important;
+    }
+
+    .book {
+        display: inline-block !important;
+        padding: 6px 12px !important;
+        font-size: 10px !important;
+        margin-left: 0 !important;
+    }
+
+    #dropdownContent {
+        width: 60% !important;
+        top: calc(47px + 28px + 1px) !important;
+        padding-top: 50px !important;
+    }
+
+    .logo-area {
+        max-width: 55%;
+        gap: 14px !important;
+    }
+
+    .navA {
+        display: block !important; /* Hide 'Home' here; put it in the burger menu */
+    }
+
+    /* Section 1: Hero Mobile */
+    .section-1 {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Forces items to the top */
+        gap: 0 !important;
+    }
+
+    .section-1, .section-2-container {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 20px 10px !important;
+    }
+
+    .left-section {
+        padding-right: 0 !important;
+    }
+
+    .main-title {
+        font-size: 2.5rem !important;
+    }
+
+    .body-text {
+        margin: 15px auto !important;
+        font-size: 1rem !important;
+    }
+
+    .hero-image {
+        min-width: 100% !important;
+        margin-top: 20px;
+    }
+
+    /* Section 2: About Mobile */
+    .section-2 {
+        flex-direction: column !important;
+        padding: 40px 15px !important;
+    }
+
+    .section-2-container {
+        display: flex !important;
+        flex-direction: column !important; /* stack vertically */
+        padding: 30px 15px !important;
+        gap: 20px !important;
+    }
+
+    .left-second-section, .right-second-section {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    /* center images on mobile stack */
+    .left-second-section {
+        display: flex !important;
+        gap: 8px !important;
+        margin: 0 auto 25px auto !important;
+    }
+
+        .left-second-section img {
+ 
+        }
+
+    .script-title {
+        font-size: 28px !important;
+    }
+
+    /* Services Section Mobile */
+    .service-title, .cursive-text {
+        font-size: 28px !important;
+    }
+
+    .cards-container {
+        gap: 15px !important;
+        padding-inline: 10px !important;
+    }
+
+    .service-card {
+        flex: 0 0 85% !important; /* Show 85% of one card to hint at scrolling */
+        padding: 20px !important;
+        min-height: 300px !important;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-btn {
+        width: 100% !important;
+    }
+}
+
+
+
+
+

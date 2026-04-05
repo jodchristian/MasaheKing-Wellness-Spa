@@ -1,0 +1,681 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ─── CSS Variables ───────────────────────────────────────────── */
+:root {
+    --forest: #1a3a2a;
+    --forest-mid: #2c5f3f;
+    --forest-light: #3d7a52;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d080;
+    --cream: #f9f5ec;
+    --text-dark: #1c1c1c;
+    --text-light: #f9f5ec;
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.12);
+    --shadow-deep: 0 8px 40px rgba(0,0,0,0.22);
+    --radius-pill: 50px;
+    --radius-card: 12px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 14px 40px;
+    box-shadow: var(--shadow-deep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ─── Logo Area ───────────────────────────────────────────────── */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    transition: transform var(--transition);
+}
+
+    .logo:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ─── Menu Area ───────────────────────────────────────────────── */
+.menu-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ─── Primary Navigation ──────────────────────────────────────── */
+.navA a {
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    margin-left: 28px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color var(--transition);
+}
+
+    .navA a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1.5px;
+        background: var(--gold-light);
+        transition: width var(--transition);
+    }
+
+    .navA a:hover {
+        color: var(--gold-pale);
+    }
+
+        .navA a:hover::after {
+            width: 100%;
+        }
+
+/* ─── Book Now Button ─────────────────────────────────────────── */
+.book {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--forest) !important;
+    padding: 10px 26px;
+    border-radius: var(--radius-pill);
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+    margin-left: 32px;
+    box-shadow: 0 3px 14px rgba(184, 134, 11, 0.45);
+    transition: all var(--transition) !important;
+}
+
+    .book::after {
+        display: none !important;
+    }
+
+    .book:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-pale) 100%) !important;
+        color: var(--forest) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(184, 134, 11, 0.55) !important;
+    }
+
+/* ─── Burger Icon ─────────────────────────────────────────────── */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 17px;
+    cursor: pointer;
+    padding: 2px 0;
+    transition: transform var(--transition);
+}
+
+    .burger:hover {
+        transform: scale(1.1);
+    }
+
+    .burger span {
+        display: block;
+        height: 2px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 2px;
+        transition: background-color var(--transition);
+    }
+
+    .burger:hover span {
+        background-color: var(--gold-pale);
+    }
+
+/* ─── Services Bar ────────────────────────────────────────────── */
+.Services {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    padding: 8px 40px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* ─── Service List Title ──────────────────────────────────────── */
+#ServiceList {
+    color: white;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin: 0;
+}
+
+/* ─── Secondary Navigation (Services Bar) ────────────────────── */
+.navB {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .navB a {
+        color: var(--forest);
+        text-decoration: none;
+        margin: 0 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        position: relative;
+        transition: color var(--transition);
+    }
+
+        .navB a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: var(--forest);
+            border-radius: 1px;
+            transition: width var(--transition);
+        }
+
+        .navB a:hover {
+            color: var(--forest-mid);
+        }
+
+            .navB a:hover::after {
+                width: 100%;
+            }
+
+/* ─── Title Section ───────────────────────────────────────────── */
+.Title {
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+    .Title h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 52px;
+        font-weight: 700;
+        color: var(--forest);
+        letter-spacing: 0.06em;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        display: inline-block;
+        margin: 0 12px;
+        transition: transform var(--transition), color var(--transition);
+    }
+
+        .Title h1:hover {
+            transform: scale(1.05);
+            color: var(--gold-light);
+        }
+
+/* ─── Intro Text ───────────────────────────────────────────── */
+#info {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--forest-mid);
+    font-weight: 400;
+    padding: 0 20px;
+}
+
+/* ─── Main Container ───────────────────────────────────────── */
+.green-container {
+    background-color: rgba(44, 95, 63, 0.08); 
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+    .green-container h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 34px;
+        font-weight: 600;
+        color: var(--forest);
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 12px;
+        margin-bottom: 25px;
+        letter-spacing: 0.04em;
+    }
+
+/* ─── Menu Styles ─────────────────────────────────────────── */
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.treatment-box {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    color: var(--text-light);
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    display: inline-block;
+    font-weight: 700;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 12px;
+}
+
+.choice-text {
+    background-color: var(--gold-light);
+    color: var(--text-light);
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    margin: 8px 0 16px;
+    font-style: italic;
+}
+
+/* ─── Menu Items ─────────────────────────────────────────── */
+.menu-item {
+    background: rgba(255,255,255,0.85); /* semi-transparent for elegance */
+    border-radius: var(--radius-card);
+    padding: 14px 20px;
+    margin: 12px auto;
+    max-width: 700px;
+    box-shadow: var(--shadow-soft);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--forest);
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+    .menu-item:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-deep);
+        background: rgba(255,255,255,0.95);
+    }
+
+.price-note {
+    font-size: 14px;
+    color: var(--gold);
+    font-style: italic;
+    display: block;
+    margin-top: 6px;
+}
+
+/* ─── Price Area ─────────────────────────────────────────── */
+.price-area {
+    margin-top: 40px;
+    border-top: 2px solid var(--forest-mid);
+    padding-top: 15px;
+}
+
+.duration {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--forest-mid);
+    margin: 0 0 8px;
+}
+
+.original-price {
+    font-size: 18px;
+    color: #777;
+    text-decoration: line-through;
+    margin: 6px 0;
+}
+
+.discount-price {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0;
+}
+
+/* ─── Navbar Container ────────────────────────────────────────── */
+#navbar {
+    position: relative;
+}
+
+#dropdownContent {
+    position: fixed;
+    top: calc(95px + 28px + 1px);
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    box-shadow: var(--shadow-deep);
+    padding: 30px 40px;
+    z-index: 1000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: flex-start;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+}
+
+    #dropdownContent.show {
+        display: flex;
+        transform: translateX(0) !important;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #dropdownContent a {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color var(--transition);
+        transition: transform 0.35s ease;
+    }
+
+        #dropdownContent a:hover {
+            color: var(--gold-pale);
+            transform: translateX(4px);
+        }
+
+.menu-item1 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.menu-icon {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 0.25s ease;
+}
+
+.menu-item1:hover .menu-icon {
+    transform: translateX(4px);
+}
+
+/* ─── Tablet View (481px to 1024px) ─────────────────────────── */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .header {
+        height: 90px; /* Slightly taller for tablet proportion */
+        padding: 10px 30px !important;
+        justify-content: space-between !important;
+    }
+
+    .logo {
+        width: 70px !important; /* Larger than mobile, smaller than desktop */
+    }
+
+    .brand-name {
+        font-size: 22px !important;
+        max-width: none; /* Allow name to sit on one line */
+        white-space: nowrap;
+    }
+
+    .menu-area {
+        gap: 20px !important;
+    }
+
+    .book {
+        padding: 10px 20px !important;
+        font-size: 12px !important;
+    }
+
+    .navA {
+        display: inline-block !important;
+    }
+
+    #dropdownContent {
+        width: 35% !important; /* Not as wide as mobile */
+        top: 87px !important; /* Matches header height */
+    }
+
+    /* ─── Services Bar Tablet ─── */
+    .Services {
+        padding: 10px 30px 15px !important;
+        gap: 10px;
+    }
+
+    #ServiceList {
+        font-size: 18px !important;
+        letter-spacing: 0.18em !important;
+    }
+
+    .navB {
+        display: flex !important;
+        gap: 8px !important;
+        width: 70%;
+    }
+
+    .navB a {
+        margin: 0 10px !important;
+        font-size: 12px !important;
+    }
+
+    /* ─── Title Section Tablet ─── */
+    .Title {
+        margin: 40px 0 25px !important;
+    }
+
+        .Title h1 {
+            font-size: 42px !important; /* Scaled down from 52px */
+            margin: 0 8px !important;
+        }
+
+    .Details {
+        /* Reduced from 70px to 40px to give text more room */
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        font-size: 18px !important;
+        line-height: 1.6;
+    }
+
+    /* ─── Green Container Tablet ─── */
+    .green-container {
+        width: 80% !important; /* Slightly narrower than mobile for better focus */
+        padding: 35px !important;
+        margin: 30px auto !important;
+    }
+
+        .green-container h2 {
+            font-size: 28px !important;
+        }
+
+    /* ─── Menu Sections Tablet ─── */
+    .treatment-box {
+        font-size: 18px !important;
+        padding: 12px 28px !important;
+    }
+
+    .choice-text {
+        font-size: 17px !important;
+    }
+
+    /* ─── Pricing Area Tablet ─── */
+    .price-area {
+        margin: 35px auto 15px !important;
+    }
+
+        .price-area .discount-price {
+            font-size: 24px !important;
+        }
+}
+
+/* ─── Mobile View (max-width: 480px) ────────────────────────── */
+@media (max-width: 480px) {
+    .header {
+        height: 80px;
+        padding: 10px 15px !important;
+        justify-content: space-between !important;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 40px !important;
+    }
+
+    .brand-name {
+        font-size: 14px !important;
+        max-width: 130px;
+        line-height: 1.2;
+        white-space: normal;
+        width: 92px;
+    }
+
+    .menu-area {
+        display: flex !important;
+        flex-shrink: 0 !important;
+        gap: 10px !important;
+    }
+
+    .book {
+        display: inline-block !important;
+        padding: 6px 12px !important;
+        font-size: 10px !important;
+        margin-left: 0 !important;
+    }
+
+    #dropdownContent {
+        width: 60% !important;
+        top: calc(47px + 28px + 1px) !important;
+        padding-top: 50px !important;
+    }
+
+    .Services {
+        padding: 10px 15px !important; /* Reduced side padding */
+        gap: 8px;
+    }
+
+    #ServiceList {
+        font-size: 14px !important; /* Smaller, subtler title */
+        letter-spacing: 0.15em !important;
+    }
+
+    .navB {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr; /* Two columns to save vertical space */
+        gap: 8px !important;
+        width: 100%;
+    }
+
+        .navB a {
+            font-size: 10px !important;
+            margin: 0 !important;
+            text-align: center;
+            border: 1px solid rgba(26, 58, 42, 0.2);
+            padding: 1.5px;
+            border-radius: 4px;
+        }
+
+    /* --- Title Section Mobile --- */
+    .Title {
+        margin: 30px 0 20px !important;
+        padding: 0 10px;
+    }
+
+        .Title h1 {
+            font-size: 32px !important; /* Scaled down from 52px to prevent wrapping */
+            margin: 0 5px !important;
+        }
+
+    .Details {
+        margin-left: 15px !important; /* Removed the huge 70px margins */
+        margin-right: 15px !important;
+        font-size: 16px !important;
+        line-height: 1.5;
+    }
+
+    /* --- Green Container Mobile --- */
+    .green-container {
+        width: 92% !important; /* Take up more screen width */
+        padding: 25px 15px !important;
+        margin: 20px auto !important;
+    }
+
+        .green-container h2 {
+            font-size: 24px !important;
+            margin-bottom: 15px !important;
+        }
+
+    /* --- Menu & Treatment Boxes --- */
+    .treatment-box {
+        font-size: 16px !important; /* Scaled down from 20px */
+        padding: 10px 20px !important;
+        width: 100%; /* Make it a full-width button feel on mobile */
+        box-sizing: border-box;
+    }
+
+    .choice-text {
+        font-size: 15px !important;
+    }
+
+    .item-name {
+        font-size: 17px !important;
+    }
+
+    /* --- Pricing Area Mobile --- */
+    .price-area {
+        margin: 25px auto 10px !important;
+    }
+
+        .price-area .duration {
+            font-size: 16px !important;
+        }
+
+        .price-area .discount-price {
+            font-size: 22px !important; /* Scaled down from 26px */
+        }
+}

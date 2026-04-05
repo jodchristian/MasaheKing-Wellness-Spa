@@ -1,0 +1,504 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* ─── CSS Variables ───────────────────────────────────────────── */
+:root {
+    --forest: #1a3a2a;
+    --forest-mid: #2c5f3f;
+    --forest-light: #3d7a52;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d080;
+    --cream: #f9f5ec;
+    --text-dark: #1c1c1c;
+    --text-light: #f9f5ec;
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.12);
+    --shadow-deep: 0 8px 40px rgba(0,0,0,0.22);
+    --radius-pill: 50px;
+    --radius-card: 12px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.header {
+    height: 127.81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    padding: 14px 40px;
+    box-shadow: var(--shadow-deep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ─── Logo Area ───────────────────────────────────────────────── */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    transition: transform var(--transition);
+}
+
+    .logo:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ─── Menu Area ───────────────────────────────────────────────── */
+.menu-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ─── Primary Navigation ──────────────────────────────────────── */
+.navA a {
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    margin-left: 28px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color var(--transition);
+}
+
+    .navA a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1.5px;
+        background: var(--gold-light);
+        transition: width var(--transition);
+    }
+
+    .navA a:hover {
+        color: var(--gold-pale);
+    }
+
+        .navA a:hover::after {
+            width: 100%;
+        }
+
+.title {
+    text-align: center;
+    margin: 50px 0 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--forest);
+    letter-spacing: 0.06em;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.18);
+    display: inline-block;
+    margin: 0 12px;
+    transition: transform var(--transition), color var(--transition);
+}
+
+.title:hover {
+    transform: scale(1.05);
+    color: var(--gold-light);
+
+}
+    /* ─── Book Now Button ─────────────────────────────────────────── */
+    .book {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--forest) !important;
+    padding: 10px 26px;
+    border-radius: var(--radius-pill);
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+    margin-left: 32px;
+    box-shadow: 0 3px 14px rgba(184, 134, 11, 0.45);
+    transition: all var(--transition) !important;
+}
+
+    .book::after {
+        display: none !important;
+    }
+
+    .book:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-pale) 100%) !important;
+        color: var(--forest) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(184, 134, 11, 0.55) !important;
+    }
+
+/* --- Tracking Container Setup --- */
+.tracking-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Green Search Bar (Ref: image_53e535) --- */
+.search-bar-container {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%); /* Specific green from your image */
+    width: 100%;
+    max-width: 650px;
+    padding: 18px 30px;
+    border-radius:var(--radius-card);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 3px 14px rgba(26, 58, 42, 0.45);
+}
+
+    .search-bar-container label {
+        color: white;
+        font-weight: 700;
+        font-size: 22px; /* Large, bold label */
+        white-space: nowrap;
+    }
+
+.input-wrapper {
+    background: white;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 2px solid #000;
+}
+
+    .input-wrapper input {
+        border: none;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        outline: none;
+        color: #000;
+    }
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+    .search-btn img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.2s;
+    }
+
+    .search-btn:hover img {
+        transform: scale(1.1);
+    }
+
+/* --- Error Message (Ref: image_53e535) --- */
+.error-msg {
+    color: #cc0000;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* --- Tracking Result Card (Ref: image_53e51a) --- */
+.tracking-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    margin-top: 20px;
+    padding: 45px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-deep);
+}
+
+.tracking-item {
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #000;
+}
+
+    .tracking-item .label {
+        font-weight: 700;
+        margin-right: 12px;
+    }
+
+    .tracking-item .value {
+        font-weight: 500;
+    }
+
+.status-text {
+    text-transform: uppercase;
+    font-weight: 700 !important;
+}
+
+/* --- Footer Text --- */
+.tracking-footer {
+    margin-top: 50px;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    .search-bar-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    .tracking-card {
+        padding: 25px;
+    }
+}
+
+/* ─── Burger Icon ─────────────────────────────────────────────── */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 17px;
+    cursor: pointer;
+    padding: 2px 0;
+    transition: transform var(--transition);
+}
+
+    .burger:hover {
+        transform: scale(1.1);
+    }
+
+    .burger span {
+        display: block;
+        height: 2px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 2px;
+        transition: background-color var(--transition);
+    }
+
+    .burger:hover span {
+        background-color: var(--gold-pale);
+    }
+
+/* ─── Nav Menu ─────────────────────────────────────────────── */
+
+#navbar {
+    position: relative;
+}
+
+#dropdownContent {
+    position: fixed;
+    top: calc(95px + 28px + 1px);
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+    box-shadow: var(--shadow-deep);
+    padding: 30px 40px;
+    z-index: 1000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: flex-start;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+}
+
+    #dropdownContent.show {
+        display: flex;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #dropdownContent a {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color var(--transition);
+        transition: transform 0.35s ease;
+    }
+
+        #dropdownContent a:hover {
+            color: var(--gold-pale);
+            transform: translateX(4px);
+        }
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.menu-icon {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 0.25s ease;
+}
+
+.menu-item:hover .menu-icon {
+    transform: translateX(4px);
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .header {
+        height: 90px; /* Slightly taller for tablet proportion */
+        padding: 10px 30px !important;
+        justify-content: space-between !important;
+    }
+
+    .logo {
+        width: 70px !important; /* Larger than mobile, smaller than desktop */
+    }
+
+    .brand-name {
+        font-size: 22px !important;
+        max-width: none; /* Allow name to sit on one line */
+        white-space: nowrap;
+    }
+
+    .menu-area {
+        gap: 20px !important;
+    }
+
+    .book {
+        padding: 10px 20px !important;
+        font-size: 12px !important;
+    }
+
+    .navA {
+        display: inline-block !important;
+    }
+
+    #dropdownContent {
+        width: 35% !important; /* Not as wide as mobile */
+        top: 87px !important; /* Matches header height */
+    }
+
+    .search-bar-container {
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px; /* Adds a clean gap between input and button */
+    }
+
+    .input-wrapper {
+        /* Allow the input to grow and fill available space */
+        width: auto;
+        flex: 1;
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .header {
+        height: 80px;
+        padding: 10px 15px !important;
+        justify-content: space-between !important;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 40px !important;
+    }
+
+    .brand-name {
+        font-size: 14px !important;
+        max-width: 130px;
+        line-height: 1.2;
+        white-space: normal;
+        width: 92px;
+    }
+
+    .menu-area {
+        display: flex !important;
+        flex-shrink: 0 !important;
+        gap: 10px !important;
+    }
+
+    .book {
+        display: inline-block !important;
+        padding: 6px 12px !important;
+        font-size: 10px !important;
+        margin-left: 0 !important;
+    }
+
+    #dropdownContent {
+        width: 60% !important;
+        top: calc(47px + 28px + 1px) !important;
+        padding-top: 50px !important;
+    }
+
+    .navA {
+        display: block !important; /* Hide 'Home' here; put it in the burger menu */
+    }
+
+
+    .search-bar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+}
